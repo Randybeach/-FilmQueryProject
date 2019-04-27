@@ -43,13 +43,13 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			}
 			conn.close();
 			if (film == null) {
-				System.out.println("No film found");
+				return new Film("");
 			}
 			return film;
 
 		} catch (SQLException e) {
 			System.out.println(e);
-			return null;
+			return new Film("");
 		}
 
 	}
@@ -73,7 +73,8 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		} catch (SQLException e) {
 			System.out.println(e);
 		}
-		return null;
+		
+		return new Actor(-1,"None","Found");
 	}
 
 	@Override
@@ -96,7 +97,8 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			if (actors.size() > 0) {
 				return actors;
 			}
-			return null;
+			actors.add(new Actor(-1,"",""));
+			return actors;
 		} catch (SQLException e) {
 			System.out.println(e);
 			return null;
@@ -131,17 +133,17 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			}
 			conn.close();
 			if (films.size() > 0) {
-				System.out.println("size is " + films.size());
 				return films;
 			} else {
-				System.out.println("No films found");
+				films.add(new Film(""));
+				
+				return films;
 			}
 
 		} catch (SQLException e) {
 			System.out.println(e);
 			return films;
 		}
-		return null;
 
 	}
 

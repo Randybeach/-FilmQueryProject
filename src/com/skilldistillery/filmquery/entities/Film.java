@@ -21,20 +21,6 @@ public class Film {
 	private String special_features;
 	private String language;
 	
-	
-	
-	public String getLanguage() {
-		return language;
-	}
-	public void setLanguage(String language) {
-		this.language = language;
-	}
-	public Film(int id) {
-		super();
-		this.id = id;
-	}
-	
-	
 	public Film(int id, String title, String description, int release_year, int language_id, int rental_duration,
 			double rental_rate, int length, double replacement_cost, String rating, String special_features, String language, List<Actor> actors) {
 		super();
@@ -53,6 +39,28 @@ public class Film {
 		this.actors = actors;
 		
 	}
+	
+	
+	
+	public Film(String title) {
+		super();
+		this.title = title;
+	}
+
+
+
+	public String getLanguage() {
+		return language;
+	}
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+	public Film(int id) {
+		super();
+		this.id = id;
+	}
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -130,16 +138,20 @@ public class Film {
 	public String toString() {
 		String details = "Title: " + title  +"\nReleased "+ release_year + " in " + language  + " : Rated "+ rating +"\n"+ description + "\n";
 		StringBuilder b = new StringBuilder(details);
+//		if(title == "") {
+//		
+//			return "";
+//		}
 		b.append("Cast:");
-		if(actors.size()>0) {
+//		if(actors.size()>0) {
 		for (Actor actor : actors) {
-			System.out.println(" adding actor " + actor.toString());
+			if(actor.getFirst_name().equals("")) {
+				continue;
+			}
 			b.append(" " + actor+ ",");
+//		}
 		}
-//		b.setLength(b.length()-1);
-		}
-		System.out.println("finished");
-		
+		b.setLength(b.length()-1);
 		return b.toString()+"\n\n"; 
 			
 	}
