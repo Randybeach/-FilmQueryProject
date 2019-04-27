@@ -9,12 +9,17 @@ public class Actor {
 	private String first_name;
 	private String last_name;
 	
+	
+	public Actor() {
+		super();
+	}
 	public Actor(int id, String first_name, String last_name) {
 		super();
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -36,7 +41,7 @@ public class Actor {
 	
 	@Override
 	public String toString() {
-		return "Actor [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + "]";
+		return first_name + " " + last_name;
 	}
 	@Override
 	public int hashCode() {

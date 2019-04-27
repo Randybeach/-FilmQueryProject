@@ -1,10 +1,13 @@
 package com.skilldistillery.filmquery.entities;
 
+import java.util.List;
+
 //Complete the Film class with attributes that map to the columns of the film table.
 //Use appropriate datatypes and Java naming conventions. Provide getters and setters,
 //and appropriate constructors. Also add a good toString, and equals and hashCode methods.
 
 public class Film {
+	List<Actor> actors;
 	private int id;
 	private String title;
 	private String description;
@@ -16,15 +19,24 @@ public class Film {
 	private double replacement_cost;
 	private String rating;
 	private String special_features;
+	private String language;
 	
 	
 	
+	public String getLanguage() {
+		return language;
+	}
+	public void setLanguage(String language) {
+		this.language = language;
+	}
 	public Film(int id) {
 		super();
 		this.id = id;
 	}
+	
+	
 	public Film(int id, String title, String description, int release_year, int language_id, int rental_duration,
-			double rental_rate, int length, double replacement_cost, String rating, String special_features) {
+			double rental_rate, int length, double replacement_cost, String rating, String special_features, String language, List<Actor> actors) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -37,6 +49,9 @@ public class Film {
 		this.replacement_cost = replacement_cost;
 		this.rating = rating;
 		this.special_features = special_features;
+		this.language = language;
+		this.actors = actors;
+		
 	}
 	public int getId() {
 		return id;
@@ -104,19 +119,38 @@ public class Film {
 	public void setSpecial_features(String special_features) {
 		this.special_features = special_features;
 	}
+	
+	public List<Actor> getActors() {
+		return actors;
+	}
+	public void setActors(List<Actor> actors) {
+		this.actors = actors;
+	}
 	@Override
 	public String toString() {
-		return "Film [id=" + id + ", title=" + title + ", description=" + description + ", release_year=" + release_year
-				+ ", language_id=" + language_id + ", rental_duration=" + rental_duration + ", rental_rate="
-				+ rental_rate + ", length=" + length + ", replacement_cost=" + replacement_cost + ", rating=" + rating
-				+ ", special_features=" + special_features + "]";
+		String details = "Title: " + title  +"\nReleased "+ release_year + " in " + language  + " : Rated "+ rating +"\n"+ description + "\n";
+		StringBuilder b = new StringBuilder(details);
+		b.append("Cast:");
+		if(actors.size()>0) {
+		for (Actor actor : actors) {
+			System.out.println(" adding actor " + actor.toString());
+			b.append(" " + actor+ ",");
+		}
+//		b.setLength(b.length()-1);
+		}
+		System.out.println("finished");
+		
+		return b.toString()+"\n\n"; 
+			
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((actors == null) ? 0 : actors.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
+		result = prime * result + ((language == null) ? 0 : language.hashCode());
 		result = prime * result + language_id;
 		result = prime * result + length;
 		result = prime * result + ((rating == null) ? 0 : rating.hashCode());
@@ -140,12 +174,22 @@ public class Film {
 		if (getClass() != obj.getClass())
 			return false;
 		Film other = (Film) obj;
+		if (actors == null) {
+			if (other.actors != null)
+				return false;
+		} else if (!actors.equals(other.actors))
+			return false;
 		if (description == null) {
 			if (other.description != null)
 				return false;
 		} else if (!description.equals(other.description))
 			return false;
 		if (id != other.id)
+			return false;
+		if (language == null) {
+			if (other.language != null)
+				return false;
+		} else if (!language.equals(other.language))
 			return false;
 		if (language_id != other.language_id)
 			return false;
@@ -176,6 +220,8 @@ public class Film {
 			return false;
 		return true;
 	}
+
+	
 	
 	
 }

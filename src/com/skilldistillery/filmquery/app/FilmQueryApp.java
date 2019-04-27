@@ -34,18 +34,19 @@ public class FilmQueryApp {
 	  do {
 	  System.out.println("1) Find Film by Id");
 	  System.out.println("2) Find Actor by Id");
-	  System.out.println("3) Find Actor by Film Id");
-	  System.out.println("4) QUIT");
+	  System.out.println("3) Find Actors by Film Id");
+	  System.out.println("4) Find Film by Keyword");
+	  System.out.println("5) QUIT");
     
 	  int choice = input.nextInt();
 	  switch(choice) {
 	  case 1:
-		  System.out.println("what film id?");
+		  System.out.println("what film Id?");
 		  int filmId = input.nextInt();
 		  System.out.println(db.findFilmById(filmId));
 		  break;
 	  case 2:
-		  System.out.println("What actor id?");
+		  System.out.println("What actor Id?");
 		  int actorId = input.nextInt();
 		  System.out.println(db.findActorById(actorId));
 		  break;
@@ -55,10 +56,15 @@ public class FilmQueryApp {
 		  System.out.println(db.findActorsByFilmId(actorFilmId));
 		  break;
 	  case 4:
+		  System.out.println("Enter in a keyword");
+		  String keyword = input.next();
+		  System.out.println(db.findFilmByKeyword(keyword));
+		  break;
+	  case 5:
 		  System.out.println("Exiting");
 		  break loop;
 	 default:
-			  
+		
 		  
 	  }
 	  }while(true);
