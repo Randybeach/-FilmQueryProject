@@ -4,7 +4,7 @@
   <interface id="1" language="java" name="com.skilldistillery.filmquery.database.DatabaseAccessor" project="FilmQuery" 
     file="/FilmQuery/src/com/skilldistillery/filmquery/database/DatabaseAccessor.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="309" y="76"/>    
+    <position height="-1" width="-1" x="113" y="64"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -13,7 +13,7 @@
   </interface>  
   <class id="2" language="java" name="com.skilldistillery.filmquery.app.FilmQueryApp" project="FilmQuery" 
     file="/FilmQuery/src/com/skilldistillery/filmquery/app/FilmQueryApp.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="191" width="200" x="94" y="-252"/>    
+    <position height="-1" width="-1" x="103" y="-159"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -23,7 +23,7 @@
   <class id="3" language="java" name="com.skilldistillery.filmquery.database.DatabaseAccessorObject" project="FilmQuery" 
     file="/FilmQuery/src/com/skilldistillery/filmquery/database/DatabaseAccessorObject.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="173" width="227" x="334" y="-252"/>    
+    <position height="-1" width="-1" x="350" y="-164"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -32,7 +32,7 @@
   </class>  
   <class id="4" language="java" name="com.skilldistillery.filmquery.entities.Actor" project="FilmQuery" 
     file="/FilmQuery/src/com/skilldistillery/filmquery/entities/Actor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1208" y="-74"/>    
+    <position height="-1" width="-1" x="357" y="252"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -41,7 +41,7 @@
   </class>  
   <class id="5" language="java" name="com.skilldistillery.filmquery.entities.Film" project="FilmQuery" 
     file="/FilmQuery/src/com/skilldistillery/filmquery/entities/Film.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="865" y="177"/>    
+    <position height="-1" width="-1" x="727" y="179"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
