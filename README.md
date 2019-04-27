@@ -15,4 +15,4 @@ This is a command line Film Query App that accesses data from a MYSQL database. 
 
 
 #### UML
-![UML Diagram](https://github.com/Randybeach/-FilmQueryProject/blob/master/Diagram.ucls)
+![UML Diagram](https://github.com/Randybeach/-FilmQueryProject/blob/master/UML.png?raw=true)
